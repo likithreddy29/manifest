@@ -25,9 +25,9 @@ kind: Service
 metadata:
   name: abc
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: zomato
   ports:
-    - port: 3000
-      nodePort: 31111
+    - port: 80            # <-- The public port you will type in your browser (80 is standard HTTP)
+      targetPort: 3000
